@@ -29,6 +29,7 @@ public class PlayerLife : MonoBehaviour
     		vivo = false;
 	    	anim.SetTrigger("Dead");
 	    	GameManager.gm.SetVidas(0);
+            GameManager.gm.SetFrutas(0);
 	    	gameObject.GetComponent<PlayerController>().enabled = false;
     	}
     }

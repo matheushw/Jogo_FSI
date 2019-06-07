@@ -69,6 +69,10 @@ public class PlayerController : MonoBehaviour {
                     player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             }
 
+            if(rb2d.transform.position.y < -10f){
+                GetComponent<PlayerLife>().PerdeVida();
+            }
+
         }
         void Flip() {
             facingRight = !facingRight;

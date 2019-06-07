@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-
 	public static GameManager gm;
 
 	private int vidas = 1;
@@ -30,8 +29,13 @@ public class GameManager : MonoBehaviour
         
     }
 
+
     public void SetVidas (int vida) {
-    	vidas += vida;
+        if(vida != 0){
+            vidas += vida;
+        }else{
+    	    vidas = vida;
+        }
     }
 
     public int GetVidas () {
@@ -39,7 +43,12 @@ public class GameManager : MonoBehaviour
     }
 
     public void SetFrutas (int fruta) {
-        frutas += fruta;
+        if(fruta != 0){
+            frutas += fruta;
+        }else{
+            frutas = fruta;
+        }
+        
         AtualizaHud();
     }
 

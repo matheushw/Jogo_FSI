@@ -15,7 +15,6 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     	rb = gameObject.GetComponent<Rigidbody2D>();
     	groundCheck = transform.Find("EnemyGroundCheck");
         
@@ -26,6 +25,7 @@ public class Enemy : MonoBehaviour
     {
 
     	onGround = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+
 
         if(!onGround) {
         	velocidade *= -1;
@@ -43,7 +43,6 @@ public class Enemy : MonoBehaviour
     		Flip();
     	}
     }
-
     void Flip () {
     	facing_right = !facing_right;
 
@@ -67,6 +66,7 @@ public class Enemy : MonoBehaviour
     		transform.Rotate(new Vector3(0, 0, -180));
     		Destroy(gameObject,3);
     	}
+		
     }
 
     void OnCollisionEnter2D (Collision2D other) {
