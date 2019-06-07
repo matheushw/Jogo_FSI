@@ -8,12 +8,9 @@ public class PlayerLife : MonoBehaviour
     // Start is called before the first frame update
 
 	Animator anim;
-
 	bool vivo = true;
-
     void Start()
     {
-        
     	anim = gameObject.GetComponent<Animator>();
 
     }
@@ -29,14 +26,21 @@ public class PlayerLife : MonoBehaviour
     		vivo = false;
 	    	anim.SetTrigger("Dead");
 	    	GameManager.gm.SetVidas(0);
-            GameManager.gm.SetFrutas(0);
 	    	gameObject.GetComponent<PlayerController>().enabled = false;
+            StartCoroutine(WaitForSceneLoad());
+            
     	}
     }
+    private IEnumerator WaitForSceneLoad() {
+     yield return new WaitForSeconds(2);
+     SceneManager.LoadScene("DeathScreen");
+     
+ }
 
-    public void Reset(){
-    	if (GameManager.gm.GetVidas() >= 0){
-    		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    	}
-    }
+    // public void Reset(){
+    // 	if (GameManager.gm.GetVidas() >= 0){
+    //         SceneManager.UnloadSceneAsync("DeathScreen");
+    // 		SceneManager.LoadScene("cu");
+    // 	}
+    // }
 }
