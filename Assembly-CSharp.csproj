@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\CameraScript.cs" />
      <Compile Include="Assets\crouch.cs" />
+     <Compile Include="Assets\Eagle.cs" />
      <Compile Include="Assets\Enemy.cs" />
      <Compile Include="Assets\FrutaScript.cs" />
      <Compile Include="Assets\GameManager.cs" />
