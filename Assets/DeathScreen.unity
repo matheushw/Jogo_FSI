@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 1811413697}
   - component: {fileID: 1811413696}
   m_Layer: 5
-  m_Name: FrutaText
+  m_Name: nmFrutas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,8 +532,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70.2, y: -25}
-  m_SizeDelta: {x: 116.3, y: 34}
+  m_AnchoredPosition: {x: 75.43, y: -19.6}
+  m_SizeDelta: {x: 129.36, y: 59.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1811413696
 MonoBehaviour:
@@ -557,12 +557,12 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 27
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 3
+    m_MaxSize: 300
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -664,6 +664,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3692458705498766742, guid: 925dc71d60f2c8542aaf2f7631e4fa8c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3692458705498766740, guid: 925dc71d60f2c8542aaf2f7631e4fa8c,
         type: 3}
       propertyPath: m_Name
@@ -723,11 +728,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3692458705498766742, guid: 925dc71d60f2c8542aaf2f7631e4fa8c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 925dc71d60f2c8542aaf2f7631e4fa8c, type: 3}

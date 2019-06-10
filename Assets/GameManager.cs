@@ -10,13 +10,13 @@ public class GameManager : MonoBehaviour
 
 	private int vidas = 1;
     private int frutas = 0;
-    
     bool HudCalled = false;
 
 
     // Start is called before the first frame update
     void Awake()
     {
+        HudCalled = false;
     	if(gm == null) {
     		gm = this;
     		DontDestroyOnLoad(gameObject);
@@ -31,24 +31,27 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(SceneManager.GetActiveScene().name == "DeathScreen"){
-            Debug.Log(HudCalled);
-            Debug.Log(frutas.ToString());
+            
+            if(HudCalled == false){
+                HudCalled = true;
+                GameObject.Find("nmFrutas").GetComponent<Text>().text = frutas.ToString();
+            }
             if(Input.anyKey){
                 Reset();
             }
-            if(!HudCalled){
-                AtualizaHud();
-                HudCalled = true;
-            }
+            
         }
+
     }
 
     public void Reset(){
-        HudCalled = false;
     	if (GetVidas() >= 0){
-            GameManager.gm.SetFrutas(0);
     		SceneManager.LoadScene("cu");
-    	}
+            HudCalled = false;
+            Debug.Log("Já carreguei a cena nova");
+            GameManager.gm.SetFrutas(0);
+            
+    	} 
     }
     public void SetVidas (int vida) {
         if(vida != 0){
@@ -68,7 +71,6 @@ public class GameManager : MonoBehaviour
         }else{
             frutas = fruta;
         }
-        
         AtualizaHud();
     }
 
